@@ -1,4 +1,4 @@
 <h1>404</h1>
 <p>
-<img src="/images/404.png">
+<img class="_404" src="/images/404.png">
 </p>

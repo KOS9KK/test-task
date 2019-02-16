@@ -276,6 +276,10 @@ a {
 	padding: 5px;
 }
 
+._404 {
+	width: 100%;
+}
+
 /*--- Tasks ---*/
 
 .tasks {
