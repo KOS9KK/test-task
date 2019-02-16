@@ -1,18 +1,7 @@
 <?php
 
-
-
 class Controller_Task extends Controller
 {
-
-    private $task;
-
-    public function __construct() {
-
-        $this->task = new Model_Task();
-        $this->view = new View();
-
-    }
 
     public function action_add_task()
     {
@@ -54,6 +43,8 @@ class Controller_Task extends Controller
                 'main_view.php',
                 'template_view.php'
             );
+
+            redirect();
 
         }
 
