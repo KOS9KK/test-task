@@ -11,18 +11,47 @@ class Model_Task extends Model
 
     }
 
-    public function get_tasks() {
+    public function get_tasks( $sort = FALSE ) {
 
         $tasks = file_get_contents( $this->dir );
-        $tasks = json_decode( $tasks );
+        $tasks = (array)json_decode( $tasks );
+
+        /*
+        if( $sort != FALSE ) {
+
+            $asc  = 'asc_';
+            $decs = 'desc_';
+
+            if ( strpos($sort, $asc)  !== false) {
+
+                $sort = str_replace( $asc, '', $sort );
+
+                usort($tasks, function ($a, $b) use ($sort) {
+                    return ($a->{$sort} - $b->{$sort});
+                });
+
+            }
+
+            if ( strpos($sort, $decs)  !== false) {
+
+                $sort = str_replace( $decs, '', $sort );
+
+                usort($tasks, function ($a, $b) use ($sort) {
+                    return ( $b->{$sort} - $a->{$sort});
+                });
+
+            }
+
+        }
+        */
 
         return $tasks;
 
     }
 
-    public function get_paginate_tasks( $count = 10, $offset = 0 ) {
+    public function get_paginate_tasks( $count = 10, $offset = 0, $sort = FALSE ) {
 
-        $tasks    = $this->get_tasks();
+        $tasks    = $this->get_tasks( $sort );
         $paginate = array();
 
         foreach( $tasks as $task ) {

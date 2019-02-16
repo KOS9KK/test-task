@@ -31,7 +31,7 @@ function show_error( $data, $key ) {
 
 function redirect( $page = '/' ) {
 
-    $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+    $host = url();
     header('Location:' . $host . $page );
     exit();
 

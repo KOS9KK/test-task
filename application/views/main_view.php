@@ -1,10 +1,13 @@
 <h1>Task list</h1>
 
-<select>
-    <option value=""></option>
-    <option value="name"></option>
-    <option value="email"></option>
-    <option value=""></option>
+<select id="task_sort" style="display: none;">
+    <option value="">- Select Sort -</option>
+    <option value="asc_name">Name ↑</option>
+    <option value="desc_name">Name ↓</option>
+    <option value="asc_email">Email ↑</option>
+    <option value="desc_email">Email ↓</option>
+    <option value="asc_text">Text ↑</option>
+    <option value="desc_text">Text ↓</option>
 </select>
 
 <table class="tasks">
