@@ -13,6 +13,7 @@
     </thead>
 
     <tbody>
+
         <tr>
             <td>1</td>
             <td><input type="checkbox" /></td>
@@ -27,6 +28,25 @@
             <td>hm3@gmail.com</td>
             <td>hutky4utki 34khy34ut  yhtj4uytku3lit4 k,jyrki3iyt  litfkuerytf kefhtek mk</td>
         </tr>
+
     </tbody>
 
 </table>
+
+<div class="container add_task_block">
+
+    <h1>Add new task:</h1>
+
+    <form action="/task/add_task" method="POST">
+
+        <input type="text" name="name"  value="<?php echo get_value( $_POST, 'name' ); ?>"  placeholder="User Name" />
+        <input type="text" name="email" value="<?php echo get_value( $_POST, 'email' ); ?>" placeholder="User Email" />
+        <input type="text" name="text"  value="<?php echo get_value( $_POST, 'text' ); ?>"  placeholder="Task Text" />
+
+        <input type="submit"   value="Add Task" />
+
+        <?php echo show_error( $data, 'error_task' ); ?>
+
+    </form>
+
+</div>
