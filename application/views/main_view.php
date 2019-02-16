@@ -1,5 +1,12 @@
 <h1>Task list</h1>
 
+<select>
+    <option value=""></option>
+    <option value="name"></option>
+    <option value="email"></option>
+    <option value=""></option>
+</select>
+
 <table class="tasks">
 
     <thead>
@@ -8,11 +15,7 @@
             <td>Name</td>
             <td>Email</td>
             <td>Text</td>
-
-            <?php if( get_value( $_SESSION, 'user_id', 0 ) > 0 ) : ?>
-                <td>Status</td>
-            <?php endif; ?>
-
+            <td>Status</td>
         </tr>
     </thead>
 
@@ -28,12 +31,24 @@
                     <td><?php echo $task->id ?></td>
                     <td><?php echo $task->name ?></td>
                     <td><?php echo $task->email ?></td>
-                    <td><?php echo $task->text ?></td>
+
+                    <?php if( get_value( $_SESSION, 'user_id', 0 ) > 0 ) : ?>
+                        <td>
+                            <input class="task_text" type="text" data-id="<?php echo $task->id ?>"
+                                   value="<?php echo $task->text ?>" />
+                        </td>
+                    <?php else : ?>
+                        <td><?php echo $task->text ?></td>
+                    <?php endif; ?>
 
                     <?php if( get_value( $_SESSION, 'user_id', 0 ) > 0 ) : ?>
                         <td>
                             <input class="task_status" type="checkbox"
                                    data-id="<?php echo $task->id ?>" <?php echo $checked; ?> />
+                        </td>
+                    <?php else : ?>
+                        <td>
+                            <?php echo ( $task->status == 1) ? '+' : '-'; ?>
                         </td>
                     <?php endif; ?>
 

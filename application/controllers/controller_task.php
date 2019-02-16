@@ -50,22 +50,21 @@ class Controller_Task extends Controller
 
     }
 
-    public function ajax_change_status() {
+    public function action_ajax_change_value() {
 
         $response = array(
             'result' => FALSE,
         );
 
         $task_id = get_value( $_POST, 'task_id', FALSE );
-        $status  = get_value( $_POST, 'status', FALSE );
+        $field   = get_value( $_POST, 'field', FALSE );
+        $value   = get_value( $_POST, 'value', FALSE );
 
-        if( $task_id != FALSE && $status != FALSE ) {
-            $response['result'] = $this->change_status($task_id, $status);
+        if( $task_id != FALSE && $field != FALSE && $value != FALSE ) {
+            $response['result'] = $this->task->change_value_by_id( $task_id, $field, $value );
         }
 
-        return json_encode( $response );
-        exit;
+        echo json_encode( $response );
     }
-
 
 }

@@ -96,7 +96,7 @@ class Model_Task extends Model
         return TRUE;
     }
 
-    public function change_status( $task_id, $status ) {
+    public function change_value_by_id( $task_id, $field, $value ) {
 
         $tasks = $this->get_tasks();
 
@@ -106,7 +106,7 @@ class Model_Task extends Model
 
                 if( $task->id == $task_id ) {
 
-                    $task->status = $status;
+                    $task->{$field} = $value;
 
                 }
 
