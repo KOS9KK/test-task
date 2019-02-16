@@ -1,7 +1,5 @@
 <h1>Task list</h1>
 
-<p>
-
 <table class="tasks">
 
     <thead>
@@ -14,7 +12,7 @@
         </tr>
     </thead>
 
-    <tbody
+    <tbody>
         <tr>
             <td>1</td>
             <td><input type="checkbox" /></td>
@@ -32,5 +30,3 @@
     </tbody>
 
 </table>
-
-</p>
