@@ -89,9 +89,9 @@ a {
 }
 
 #content {
-	padding: 0 0 0 10px;
-	width: 615px;
-	margin: 0 0 0 285px;
+	padding: 0 15px 0 15px;
+	width: 100%;
+	margin: 0 0 0 0;
 }
 
 #footer {
@@ -106,10 +106,8 @@ a {
 }
 
 #header {
-	height: 130px;
-	padding: 40px;
+	padding: 40px 40px 40px 40px;
 	position: relative;
-	background: url(../images/cap.jpg) no-repeat 85px 30px;
 }
 
 #logo {
@@ -136,11 +134,6 @@ a {
 }
 
 #menu {
-	line-height: 57px;
-	position: absolute;
-	right: 40px;
-	top: 76px;
-	height: 57px;
 	font-family: "Open Sans", sans-serif;
 }
 
@@ -156,8 +149,9 @@ a {
 }
 
 #menu ul {
-	padding: 0 20px 0 20px;
+	padding: 0;
 	list-style: none;
+	margin: 0;
 }
 
 #menu ul li {
@@ -262,6 +256,11 @@ a {
 	box-shadow: 10px 100px 150px 0px rgba(0,0,0,0.15);
 	border: solid 1px #f3f3f3;
 	border-top: 0;
+}
+
+.login-form,
+.user-hello {
+	float: right;
 }
 
 .box img {
