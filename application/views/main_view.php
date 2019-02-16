@@ -24,13 +24,17 @@
                 <?php $checked = ( $task->status == 1 ) ? 'checked' : ''; ?>
 
                 <tr>
+
                     <td><?php echo $task->id ?></td>
                     <td><?php echo $task->name ?></td>
                     <td><?php echo $task->email ?></td>
                     <td><?php echo $task->text ?></td>
 
                     <?php if( get_value( $_SESSION, 'user_id', 0 ) > 0 ) : ?>
-                        <td><input type="checkbox" <?php echo $checked; ?> /></td>
+                        <td>
+                            <input class="task_status" type="checkbox"
+                                   data-id="<?php echo $task->id ?>" <?php echo $checked; ?> />
+                        </td>
                     <?php endif; ?>
 
                 </tr>

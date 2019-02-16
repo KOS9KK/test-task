@@ -96,4 +96,29 @@ class Model_Task extends Model
         return TRUE;
     }
 
+    public function change_status( $task_id, $status ) {
+
+        $tasks = $this->get_tasks();
+
+        if( count( $tasks ) > 0 ) {
+
+            foreach ( $tasks as $task ) {
+
+                if( $task->id == $task_id ) {
+
+                    $task->status = $status;
+
+                }
+
+            }
+
+        }
+
+        $tasks = json_encode( $tasks );
+        file_put_contents( $this->dir, $tasks );
+
+        return TRUE;
+
+    }
+
 }
