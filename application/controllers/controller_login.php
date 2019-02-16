@@ -20,10 +20,8 @@ class Controller_Login extends Controller
 
                 $_SESSION['user_id'] = 1;
 
-                $this->view->generate(
-                    'main_view.php',
-                    'template_view.php'
-                );
+                redirect();
+
             }
             else {
 

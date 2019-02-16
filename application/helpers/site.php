@@ -36,3 +36,11 @@ function redirect( $page = '/' ) {
     exit();
 
 }
+
+function url() {
+
+    $url = 'http://' . $_SERVER['HTTP_HOST'];
+
+    return $url;
+
+}

@@ -27,7 +27,7 @@ class Model_Task extends Model
 
         foreach( $tasks as $task ) {
 
-            if( $offset <= 0  ) {
+            if( $offset <= 0 ) {
 
                 $paginate[] = $task;
 
@@ -42,7 +42,7 @@ class Model_Task extends Model
 
         }
 
-        return $tasks;
+        return $paginate;
 
     }
 

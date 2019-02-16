@@ -26,6 +26,7 @@
                     <td><?php echo $task->email ?></td>
                     <td><?php echo $task->text ?></td>
                 </tr>
+
             <?php endforeach; ?>
         <?php endif; ?>
 
@@ -33,11 +34,25 @@
 
 </table>
 
+<div class="pagination">
+
+    <?php $page = get_value( $_GET, 'page', 0 ); ?>
+
+    <?php for( $i = 0; $i < ( $data['count'] / 10 ); $i++ ) : ?>
+
+        <?php $active = ( $page == $i ) ? 'active' : ''; ?>
+
+        <a href="<?php echo url(); ?>?page=<?php echo $i; ?>" class="<?php echo $active; ?>"><?php echo $i + 1; ?></a>
+
+    <?php endfor; ?>
+
+</div>
+
 <div class="container add_task_block">
 
     <h1>Add new task:</h1>
 
-    <form action="/task/add_task" method="POST">
+    <form action="<?php echo url(); ?>/task/add_task" method="POST">
 
         <input type="text" name="name"  value="<?php echo get_value( $_POST, 'name' ); ?>"  placeholder="User Name" />
         <input type="text" name="email" value="<?php echo get_value( $_POST, 'email' ); ?>" placeholder="User Email" />

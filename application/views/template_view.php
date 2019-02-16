@@ -38,7 +38,7 @@
 
                     <?php else : ?>
 
-                    <form class="login-form" action="/login" method="POST">
+                    <form class="login-form" action="<?php echo url(); ?>/login" method="POST">
 
                         <input type="text"     name="user"      placeholder="User Name" />
                         <input type="password" name="password"  placeholder="User Password" />
