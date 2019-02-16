@@ -49,4 +49,12 @@ class Controller_Login extends Controller
         }
 
     }
+
+    function action_exit() {
+
+        unset( $_SESSION['user_id'] );
+        redirect();
+
+    }
+
 }

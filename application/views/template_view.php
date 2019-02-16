@@ -27,14 +27,15 @@
                 <div id="menu">
 
                     <?php
-                        $user_id = ( isset( $_SESSION['user_id'] ) && $_SESSION['user_id'] > 0 )
-                            ? $_SESSION['user_id']
-                            : 0;
+                        $user_id = get_value( $_SESSION, 'user_id', 0 );
                     ?>
 
                     <?php if( $user_id > 0 ) : ?>
 
-                        <span class="user-hello"><?php echo 'Hello, Admin!'?></span>
+                        <span class="user-hello">
+                            <?php echo 'Hello, Admin!'?>
+                            <a href="<?php echo url() ?>/login/exit">(Exit)</a>
+                        </span>
 
                     <?php else : ?>
 

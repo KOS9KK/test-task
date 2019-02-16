@@ -5,10 +5,14 @@
     <thead>
         <tr>
             <td>ID</td>
-            <td>Complete</td>
             <td>Name</td>
             <td>Email</td>
             <td>Text</td>
+
+            <?php if( get_value( $_SESSION, 'user_id', 0 ) > 0 ) : ?>
+                <td>Status</td>
+            <?php endif; ?>
+
         </tr>
     </thead>
 
@@ -21,10 +25,14 @@
 
                 <tr>
                     <td><?php echo $task->id ?></td>
-                    <td><input type="checkbox" <?php echo $checked; ?> /></td>
                     <td><?php echo $task->name ?></td>
                     <td><?php echo $task->email ?></td>
                     <td><?php echo $task->text ?></td>
+
+                    <?php if( get_value( $_SESSION, 'user_id', 0 ) > 0 ) : ?>
+                        <td><input type="checkbox" <?php echo $checked; ?> /></td>
+                    <?php endif; ?>
+
                 </tr>
 
             <?php endforeach; ?>
